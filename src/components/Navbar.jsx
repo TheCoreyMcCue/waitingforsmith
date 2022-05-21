@@ -51,11 +51,10 @@ const ResponsiveAppBar = () => {
               noWrap
               component="div"
               onClick={() => navigate('/')}
-              sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, justifyContent: {md: 'space-between'} }}
+              sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, justifyContent: {md: 'space-between'}, cursor: 'pointer' }}
             >
               <img src={logo} style={{height: '3em', width: 'auto' }} alt="waiting for smith logo" />
             </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: {md: 'space-between'} }}>
             <IconButton
               size="large"
@@ -114,7 +113,7 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -137,7 +136,7 @@ const ResponsiveAppBar = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
