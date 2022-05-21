@@ -42,12 +42,6 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
-  const linkStyle = {
-  margin: "1rem",
-  textDecoration: "none",
-  color: 'grey'
-};
-
   return (
     <AppBar position="static" sx={{background: 'grey'}}>
       <Container maxWidth="xl">
