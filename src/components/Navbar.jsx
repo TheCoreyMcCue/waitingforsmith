@@ -11,6 +11,8 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../assets/wfs-logo.png';
 
+import { useNavigate } from 'react-router-dom';
+
 const pages = ['About', 'Live', 'Press', 'Lyrics', 'Behind the Song', 'Merch', 'Blog', 'Stay Tuned'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -18,12 +20,19 @@ const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const navigate = useNavigate();
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   // const handleOpenUserMenu = (event) => {
   //   setAnchorElUser(event.currentTarget);
   // };
+
+  const handleLinkClick = (page) => {
+    setAnchorElNav(null);
+    navigate(`/${page.replace(/\s/g, '').toLowerCase()}`);
+  }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -33,18 +42,25 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+  color: 'grey'
+};
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{background: 'grey'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, justifyContent: {md: 'space-between'} }}
-          >
-            <img src={logo} style={{height: '3em', width: 'auto' }} alt="waiting for smith logo" />
-          </Typography>
+            <Typography
+              variant="h5"
+              noWrap
+              component="div"
+              onClick={() => navigate('/')}
+              sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, justifyContent: {md: 'space-between'} }}
+            >
+              <img src={logo} style={{height: '3em', width: 'auto' }} alt="waiting for smith logo" />
+            </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: {md: 'space-between'} }}>
             <IconButton
@@ -76,8 +92,10 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page} onClick={() => handleLinkClick(page)}>
+                    <Typography textAlign="center">
+                        {page}
+                    </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -92,13 +110,13 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: {md: 'space-evenly'} }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+                <Button
+                  key={page}
+                  onClick={() => handleLinkClick(page)}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page}
+                </Button>
             ))}
           </Box>
 

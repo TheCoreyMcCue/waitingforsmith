@@ -5,4 +5,6 @@ export { default as Live } from "./Live";
 export { default as Lyrics } from "./Lyrics";
 export { default as Merch } from "./Merch";
 export { default as Press } from "./Press";
+export { default as Blog } from "./Blog";
+export { default as Error } from "./Error";
 export { default as StayTuned } from "./StayTuned";
