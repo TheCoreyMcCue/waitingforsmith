@@ -3,7 +3,7 @@ import React from "react";
 import {
   About,
   Blog,
-  BTS,
+  BehindTheSong,
   Error,
   Home,
   Live,
@@ -26,7 +26,7 @@ function App() {
         <Route path="/live" element={<Live />} />
         <Route path="/press" element={<Press />} />
         <Route path="/lyrics" element={<Lyrics />} />
-        <Route path="/bts" element={<BTS />} />
+        <Route path="/bts" element={<BehindTheSong />} />
         <Route path="/merch" element={<Merch />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/staytuned" element={<StayTuned />} />

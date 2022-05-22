@@ -1,5 +1,5 @@
 export { default as About } from "./About";
-export { default as BTS } from "./BTS";
+export { default as BehindTheSong } from "./BehindTheSong";
 export { default as Home } from "./Home";
 export { default as Live } from "./Live";
 export { default as Lyrics } from "./Lyrics";
