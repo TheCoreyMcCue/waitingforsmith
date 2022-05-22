@@ -14,14 +14,17 @@ import {
 } from "./pages";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useTheme, useMediaQuery } from "@material-ui/core";
 import { Navbar } from "./components";
 
 function App() {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   return (
     <Router>
-      <Navbar />
+      <Navbar isDesktop={isDesktop} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home isDesktop={isDesktop} />} />
         <Route path="/about" element={<About />} />
         <Route path="/live" element={<Live />} />
         <Route path="/press" element={<Press />} />

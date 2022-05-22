@@ -4,10 +4,10 @@ import { Button } from "@mui/material";
 
 import { HomeHero } from "../components";
 
-const Home = () => {
+const Home = ({ isDesktop }) => {
   return (
     <div>
-      <HomeHero />
+      <HomeHero isDesktop={isDesktop} />
       <Button>Pre-Save</Button>
     </div>
   );

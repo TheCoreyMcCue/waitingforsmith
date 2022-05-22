@@ -6,7 +6,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { FormControl, InputLabel, Input } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { useTheme, useMediaQuery } from "@material-ui/core";
 
 const style = {
   position: "absolute",
@@ -25,12 +24,9 @@ const style = {
   alignItems: "center",
 };
 
-export default function BasicModal() {
+export default function BasicModal({ isDesktop }) {
   const [open, setOpen] = React.useState(true);
   const handleClose = () => setOpen(false);
-
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Modal
@@ -40,15 +36,17 @@ export default function BasicModal() {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <CloseIcon
-          onClick={handleClose}
-          style={{
-            cursor: "pointer",
-            position: "absolute",
-            top: "15px",
-            right: "18px",
-          }}
-        />
+        {isDesktop && (
+          <CloseIcon
+            onClick={handleClose}
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              top: "15px",
+              right: "18px",
+            }}
+          />
+        )}
         <Typography
           id="modal-modal-title"
           variant="h6"

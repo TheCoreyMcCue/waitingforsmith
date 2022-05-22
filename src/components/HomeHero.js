@@ -1,13 +1,10 @@
 import React from "react";
 
-import { useTheme, useMediaQuery } from "@material-ui/core";
 import ReactPlayer from "react-player";
 
 import BasicModal from "./Modal";
 
-const HomeHero = () => {
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+const HomeHero = ({ isDesktop }) => {
   return (
     <div>
       {isDesktop ? (
@@ -26,7 +23,7 @@ const HomeHero = () => {
           style={{ height: "45vh", width: "100vw" }}
         />
       )}
-      <BasicModal />
+      <BasicModal isDesktop={isDesktop} />
     </div>
   );
 };
