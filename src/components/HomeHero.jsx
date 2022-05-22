@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 import { useTheme, useMediaQuery } from '@material-ui/core';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
+
+import BasicModal from './Modal';
 
 const HomeHero = () => {
   const theme = useTheme();
@@ -14,6 +16,7 @@ const showText = useMediaQuery(theme.breakpoints.up('md'));
         <img src="https://www.waitingforsmith.co.uk/uploads/2018/07/WAITING_FOR_SMITH_GS-1680.jpg-lower-res.jpg" alt="waiting for smith" style={{height: '45vh', width: '100vw'}} />
       )
 }
+      <BasicModal />
     </div>
   )
 }
