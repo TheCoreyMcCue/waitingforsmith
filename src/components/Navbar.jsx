@@ -88,6 +88,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
+            onClick={() => navigate('/')}
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
             <img src={logo} style={{height: '3em', width: 'auto' }} alt="waiting for smith logo" />
