@@ -1,18 +1,23 @@
 import * as React from "react";
+import { useState } from "react";
 
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
-import { FormControl, InputLabel, Input } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
+import {
+  Box,
+  Button,
+  FormControl,
+  Input,
+  InputLabel,
+  Modal,
+  Typography,
+} from "@mui/material";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "55%",
+  width: "50%",
   height: "30%",
   bgcolor: "background.paper",
   border: "2px solid #000",
@@ -41,7 +46,7 @@ const mobileStyle = {
 };
 
 export default function BasicModal({ isDesktop }) {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   const handleClose = () => setOpen(false);
 
   return (
@@ -73,11 +78,10 @@ export default function BasicModal({ isDesktop }) {
           Join our Mailing List
         </Typography>
         <Typography variant="p" style={{ paddingBottom: "5%" }}>
-          Let me bring you some extra food for the soul from time to time And a
-          big welcome to the Sam Way music family.
+          Let me bring you some extra food for the soul from time to time
         </Typography>
         <Typography variant="p" style={{ paddingBottom: "5%" }}>
-          And a big welcome to the Sam Way music family.
+          And a big welcome to the Waiting For Smith music family.
         </Typography>
         <FormControl style={{ width: isDesktop ? "40%" : "95%" }}>
           <InputLabel htmlFor="my-input">Email address</InputLabel>

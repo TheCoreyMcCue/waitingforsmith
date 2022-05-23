@@ -1,5 +1,9 @@
 import React from "react";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useTheme, useMediaQuery } from "@material-ui/core";
+import { Navbar } from "./components";
+
 import {
   About,
   Blog,
@@ -13,10 +17,6 @@ import {
   StayTuned,
 } from "./pages";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useTheme, useMediaQuery } from "@material-ui/core";
-import { Navbar } from "./components";
-
 function App() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
@@ -29,7 +29,7 @@ function App() {
         <Route path="/live" element={<Live />} />
         <Route path="/press" element={<Press />} />
         <Route path="/lyrics" element={<Lyrics />} />
-        <Route path="/bts" element={<BehindTheSong />} />
+        <Route path="/behindthesong" element={<BehindTheSong />} />
         <Route path="/merch" element={<Merch />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/staytuned" element={<StayTuned />} />

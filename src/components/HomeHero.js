@@ -20,7 +20,7 @@ const HomeHero = ({ isDesktop }) => {
         <img
           src="https://www.waitingforsmith.co.uk/uploads/2018/07/WAITING_FOR_SMITH_GS-1680.jpg-lower-res.jpg"
           alt="waiting for smith"
-          style={{ height: "45vh", width: "100vw" }}
+          style={{ height: "auto", width: "100vw" }}
         />
       )}
       <BasicModal isDesktop={isDesktop} />
