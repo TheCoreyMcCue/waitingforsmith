@@ -6,7 +6,6 @@ import {
   Box,
   Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   FormControl,
