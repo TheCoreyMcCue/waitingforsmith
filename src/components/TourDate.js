@@ -35,7 +35,15 @@ const TourDate = ({ dateInfo }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Buy Tickets</Button>
+          <Button
+            onClick={() =>
+              window.open(dateInfo?.ticketLink, "_blank", "noopener")
+            }
+            size="small"
+            target="_blank"
+          >
+            Buy Tickets
+          </Button>
         </CardActions>
       </Card>
     </Box>
