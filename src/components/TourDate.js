@@ -13,12 +13,13 @@ const TourDate = ({ dateInfo }) => {
       style={{
         display: "flex",
         justifyContent: "center",
-        marginTop: "2%",
+        paddingTop: "1%",
+        paddingBottom: "1%",
       }}
     >
-      <Card style={{ minWidth: "75%" }}>
+      <Card style={{ minWidth: "65%" }}>
         <CardContent>
-          <Typography variant="h5" color="text.secondary" gutterBottom>
+          <Typography variant="h5" color="text.primary" gutterBottom>
             {dateInfo.title}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
@@ -31,7 +32,7 @@ const TourDate = ({ dateInfo }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button size="small">Buy Tickets</Button>
         </CardActions>
       </Card>
     </Box>
