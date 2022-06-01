@@ -1,9 +1,6 @@
 import { createClient } from "contentful";
 
 const useContentful = () => {
-  // const space = ;
-  // const accessToken = ;
-
   const client = createClient({
     space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
     accessToken: process.env.REACT_APP_CONTENTFUL_PREVIEW_TOKEN,
@@ -15,6 +12,7 @@ const useContentful = () => {
       const tourDates = await client.getEntries({
         content_type: "tourDates",
         select: "fields",
+        order: "fields.tourDate",
       });
       const sanitizedTourDates = tourDates.items.map((item) => {
         return {
@@ -26,7 +24,23 @@ const useContentful = () => {
       console.log(`error fetching tour dates: ${error}`);
     }
   };
-  return { getTourDates };
+  const getHomePage = async () => {
+    try {
+      const homePage = await client.getEntries({
+        content_type: "homePage",
+        select: "fields",
+      });
+      const sanitizedHomePage = homePage.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedHomePage;
+    } catch (error) {
+      console.log(`error fetching tour dates: ${error}`);
+    }
+  };
+  return { getTourDates, getHomePage };
 };
 
 export default useContentful;
