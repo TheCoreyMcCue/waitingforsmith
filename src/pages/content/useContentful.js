@@ -16,7 +16,12 @@ const useContentful = () => {
         content_type: "tourDates",
         select: "fields",
       });
-      return tourDates;
+      const sanitizedTourDates = tourDates.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      })
+      return sanitizedTourDates;
     } catch (error) {
       console.log(`error fetching tour dates: ${error}`);
     }

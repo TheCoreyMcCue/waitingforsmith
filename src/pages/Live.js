@@ -7,10 +7,19 @@ const Live = () => {
   const { getTourDates } = useContentful();
 
   useEffect(() => {
-    getTourDates().then((data) => console.log(data));
-  });
+    getTourDates().then((data) => setTourDates(data));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  return <div>Live</div>;
+  console.log(tourDates);
+
+  return (
+    <div>
+      {tourDates.map((date) => (
+        <h1>{date.title}</h1>
+      ))}
+    </div>
+  );
 };
 
 export default Live;
