@@ -1,12 +1,12 @@
 import { createClient } from "contentful";
 
 const useContentful = () => {
-  const space = process.env.REACT_APP_CONTENTFUL_SPACE_ID;
-  const accessToken = process.env.REACT_APP_CONTENTFUL_PREVIEW_TOKEN;
+  // const space = ;
+  // const accessToken = ;
 
   const client = createClient({
-    space: space,
-    accessToken: accessToken,
+    space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.REACT_APP_CONTENTFUL_PREVIEW_TOKEN,
     host: "preview.contentful.com",
   });
 
@@ -20,7 +20,7 @@ const useContentful = () => {
         return {
           ...item.fields,
         };
-      })
+      });
       return sanitizedTourDates;
     } catch (error) {
       console.log(`error fetching tour dates: ${error}`);

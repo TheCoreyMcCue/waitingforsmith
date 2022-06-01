@@ -16,7 +16,10 @@ const Live = () => {
   return (
     <div>
       {tourDates.map((date) => (
-        <h1>{date.title}</h1>
+        <div>
+          <h1>{date.title}</h1>
+          <h3>{date.date}</h3>
+        </div>
       ))}
     </div>
   );
