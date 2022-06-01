@@ -24,6 +24,8 @@ const Live = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
+        marginBottom: "-5%",
+        paddingBottom: "5%",
         width: "100vw",
         height: "100%",
         filter: `sepia(25%)`,
@@ -32,7 +34,6 @@ const Live = () => {
       {tourDates.map((date) => (
         <div>
           <TourDate dateInfo={date} />
-          <h3>{date.date}</h3>
         </div>
       ))}
     </Box>

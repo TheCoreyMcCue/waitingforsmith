@@ -20,10 +20,13 @@ const TourDate = ({ dateInfo }) => {
       <Card style={{ minWidth: "65%" }}>
         <CardContent>
           <Typography variant="h5" color="text.primary" gutterBottom>
-            {dateInfo.title}
+            {dateInfo?.title}
+          </Typography>
+          <Typography variant="h6" color="text.primary" gutterBottom>
+            {dateInfo?.place}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {new Date(dateInfo.tourDate).toLocaleDateString("en-gb", {
+            {new Date(dateInfo?.tourDate).toLocaleDateString("en-gb", {
               weekday: "long",
               year: "numeric",
               month: "short",
