@@ -20,8 +20,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "50%",
-  height: "30%",
+  width: "45%",
+  height: "35%",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -36,8 +36,8 @@ const mobileStyle = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "55%",
-  height: "40%",
+  width: "60%",
+  height: "30em",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -73,13 +73,13 @@ export default function BasicModal({ isDesktop }) {
           />
         )}
         <Card
-          sx={{ display: "flex", flexDirection: isDesktop ? "row" : "column" }}
+          sx={{ display: "flex", flexDirection: isDesktop ? "row" : "column", height: "100%" }}
         >
           <CardMedia
             component="img"
             alt="green iguana"
             height="100%"
-            width="50%"
+            sx={{ width: "100%" }}
             image="https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/237250905_3009502749262808_3553294946819976522_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=jjx7sB6OaDIAX_yJY9v&tn=XJ6TtWPEEJkapElg&_nc_ht=scontent-lhr8-2.xx&oh=00_AT92ZTDwX0NsgWa23EB16JcbH7GVnWTa1S7KB5rAWicuNg&oe=629C75F7"
           />
           <Box>

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import ReactPlayer from "react-player";
 
 import BasicModal from "./Modal";
 
-const HomeHero = ({ isDesktop }) => {
+const HomeHero = ({ isDesktop, homePageData }) => {
+  console.log(homePageData[0]?.topVideoLink);
+
+  // useEffect(() => {
+  //   getHomePage().then((data) => setHomePageData(data));
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
   return (
     <div>
       {isDesktop ? (
@@ -12,15 +19,22 @@ const HomeHero = ({ isDesktop }) => {
           height="100vh"
           width="100vw"
           loop={true}
-          url="https://www.youtube.com/watch?v=YFDGCEui-mk"
+          url={homePageData[0]?.topVideoLink}
           muted={true}
           playing={true}
         />
       ) : (
         <img
-          src="https://www.waitingforsmith.co.uk/uploads/2018/07/WAITING_FOR_SMITH_GS-1680.jpg-lower-res.jpg"
+          src={homePageData[0]?.backUpPhoto?.fields?.file?.url}
           alt="waiting for smith"
-          style={{ height: "auto", width: "100vw" }}
+          style={{
+            height: "50vh",
+            width: "100vw",
+            zIndex: "-1",
+            // zoom: "1.5",
+            // position: "relative",
+            // left: "-80px",
+          }}
         />
       )}
       <BasicModal isDesktop={isDesktop} />

@@ -16,7 +16,7 @@ const Home = ({ isDesktop }) => {
   console.log(homePageData);
   return (
     <div>
-      <HomeHero isDesktop={isDesktop} />
+      <HomeHero isDesktop={isDesktop} homePageData={homePageData} />
       <HomePromo />
     </div>
   );
