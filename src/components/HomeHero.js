@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-
 import ReactPlayer from "react-player";
 
 import BasicModal from "./Modal";
