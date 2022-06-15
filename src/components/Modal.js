@@ -29,7 +29,6 @@ const style = {
   // paddingTop: "5%",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
 };
 const mobileStyle = {
   position: "absolute",
@@ -37,7 +36,7 @@ const mobileStyle = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "60%",
-  height: "30em",
+  height: "35em",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -45,10 +44,11 @@ const mobileStyle = {
   paddingTop: "5%",
   display: "flex",
   flexDirection: "column",
+  // alignItems: 'space-between',
   alignItems: "flex-start",
 };
 
-export default function BasicModal({ isDesktop }) {
+export default function BasicModal({ isDesktop, popUpData }) {
   const [open, setOpen] = useState(true);
   const handleClose = () => setOpen(false);
 
@@ -77,12 +77,12 @@ export default function BasicModal({ isDesktop }) {
         >
           <CardMedia
             component="img"
-            alt="green iguana"
+            alt="Waiting for smith"
             height="100%"
             sx={{ width: "100%" }}
-            image="https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/237250905_3009502749262808_3553294946819976522_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=jjx7sB6OaDIAX_yJY9v&tn=XJ6TtWPEEJkapElg&_nc_ht=scontent-lhr8-2.xx&oh=00_AT92ZTDwX0NsgWa23EB16JcbH7GVnWTa1S7KB5rAWicuNg&oe=629C75F7"
+            image={popUpData[0]?.image?.fields?.file?.url}
           />
-          <Box>
+          <Box style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
             <CardContent>
               <Typography gutterBottom variant="h6" component="div">
                 Join Our Mailing List
@@ -94,7 +94,7 @@ export default function BasicModal({ isDesktop }) {
             <CardContent>
               <FormControl style={{ width: isDesktop ? "95%" : "95%" }}>
                 <InputLabel htmlFor="my-input">Email address</InputLabel>
-                <Input id="my-input" aria-describedby="my-helper-text" />
+                <Input type="email" id="my-input" aria-describedby="my-helper-text" />
                 <Button>Submit</Button>
               </FormControl>
             </CardContent>

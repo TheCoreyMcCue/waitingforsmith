@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const TourDate = ({ dateInfo }) => {
-  console.log(dateInfo);
   return (
     <Box
       style={{

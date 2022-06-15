@@ -24,6 +24,22 @@ const useContentful = () => {
       console.log(`error fetching tour dates: ${error}`);
     }
   };
+  const getTour = async () => {
+    try {
+      const tour = await client.getEntries({
+        content_type: "tour",
+        select: "fields",
+      });
+      const sanitizedTour = tour.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedTour;
+    } catch (error) {
+      console.log(`error fetching tour dates: ${error}`);
+    }
+  };
   const getHomePage = async () => {
     try {
       const homePage = await client.getEntries({
@@ -37,10 +53,26 @@ const useContentful = () => {
       });
       return sanitizedHomePage;
     } catch (error) {
-      console.log(`error fetching tour dates: ${error}`);
+      console.log(`error fetching home page data: ${error}`);
     }
   };
-  return { getTourDates, getHomePage };
+  const getPopUp = async () => {
+    try {
+      const popUp = await client.getEntries({
+        content_type: "popUp",
+        select: "fields",
+      });
+      const sanitizedPopUp = popUp.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedPopUp;
+    } catch (error) {
+      console.log(`error fetching pop up data: ${error}`);
+    }
+  };
+  return { getTourDates, getHomePage, getPopUp, getTour };
 };
 
 export default useContentful;

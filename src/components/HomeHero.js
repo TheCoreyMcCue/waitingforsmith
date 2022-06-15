@@ -2,22 +2,16 @@ import ReactPlayer from "react-player";
 
 import BasicModal from "./Modal";
 
-const HomeHero = ({ isDesktop, homePageData }) => {
-  console.log(homePageData[0]?.topVideoLink);
-
-  // useEffect(() => {
-  //   getHomePage().then((data) => setHomePageData(data));
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+const HomeHero = ({ isDesktop, homePageData, popUpData }) => {
 
   return (
     <div>
       {isDesktop ? (
         <ReactPlayer
           height="100vh"
-          width="100vw"
+          width="auto"
           loop={true}
-          url={homePageData[0]?.topVideoLink}
+          url={homePageData[0]?.topVideo?.fields?.file?.url}
           muted={true}
           playing={true}
         />
@@ -35,7 +29,7 @@ const HomeHero = ({ isDesktop, homePageData }) => {
           }}
         />
       )}
-      <BasicModal isDesktop={isDesktop} />
+      <BasicModal isDesktop={isDesktop} popUpData={popUpData} />
     </div>
   );
 };
