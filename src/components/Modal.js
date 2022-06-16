@@ -50,7 +50,11 @@ const mobileStyle = {
 
 export default function BasicModal({ isDesktop, popUpData }) {
   const [open, setOpen] = useState(true);
+  const [email, setEmail] = useState(null);
   const handleClose = () => setOpen(false);
+  const handleSubmit = (e) => {
+    console.log(email);
+  };
 
   return (
     <Modal
@@ -73,7 +77,11 @@ export default function BasicModal({ isDesktop, popUpData }) {
           />
         )}
         <Card
-          sx={{ display: "flex", flexDirection: isDesktop ? "row" : "column", height: "100%" }}
+          sx={{
+            display: "flex",
+            flexDirection: isDesktop ? "row" : "column",
+            height: "100%",
+          }}
         >
           <CardMedia
             component="img"
@@ -82,7 +90,13 @@ export default function BasicModal({ isDesktop, popUpData }) {
             sx={{ width: "100%" }}
             image={popUpData[0]?.image?.fields?.file?.url}
           />
-          <Box style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
             <CardContent>
               <Typography gutterBottom variant="h6" component="div">
                 Join Our Mailing List
@@ -92,11 +106,18 @@ export default function BasicModal({ isDesktop, popUpData }) {
               </Typography>
             </CardContent>
             <CardContent>
-              <FormControl style={{ width: isDesktop ? "95%" : "95%" }}>
-                <InputLabel htmlFor="my-input">Email address</InputLabel>
-                <Input type="email" id="my-input" aria-describedby="my-helper-text" />
-                <Button>Submit</Button>
-              </FormControl>
+              <form>
+                <FormControl style={{ width: isDesktop ? "95%" : "95%" }}>
+                  <InputLabel htmlFor="my-input">Email address</InputLabel>
+                  <Input
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    id="my-input"
+                    aria-describedby="my-helper-text"
+                  />
+                  <Button onClick={handleSubmit}>Submit</Button>
+                </FormControl>
+              </form>
             </CardContent>
           </Box>
         </Card>

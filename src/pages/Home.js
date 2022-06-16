@@ -17,7 +17,11 @@ const Home = ({ isDesktop }) => {
 
   return (
     <div>
-      <HomeHero isDesktop={isDesktop} homePageData={homePageData} popUpData={popUpData} />
+      <HomeHero
+        isDesktop={isDesktop}
+        homePageData={homePageData}
+        popUpData={popUpData}
+      />
       <HomePromo />
     </div>
   );
