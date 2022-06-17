@@ -37,7 +37,7 @@ const useContentful = () => {
       });
       return sanitizedTour;
     } catch (error) {
-      console.log(`error fetching tour dates: ${error}`);
+      console.log(`error fetching tour: ${error}`);
     }
   };
   const getHomePage = async () => {

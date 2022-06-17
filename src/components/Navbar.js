@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/wfs-logo.png";
@@ -140,6 +141,9 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
+          <Button style={{ color: "white" }}>
+            <ShoppingCartIcon />
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

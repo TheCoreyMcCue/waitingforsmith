@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import useContentful from "./content/useContentful";
 
-import { HomeHero, HomePromo } from "../components";
+import { HomeHero, HomePromo, Socials } from "../components";
 
 const Home = ({ isDesktop }) => {
   const [homePageData, setHomePageData] = useState([]);
@@ -22,6 +22,7 @@ const Home = ({ isDesktop }) => {
         homePageData={homePageData}
         popUpData={popUpData}
       />
+      <Socials />
       <HomePromo />
     </div>
   );

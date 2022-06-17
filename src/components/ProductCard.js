@@ -32,13 +32,8 @@ const ProductCard = () => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, margin: "2%" }}>
+    <Card sx={{ maxWidth: 345, margin: "1%" }}>
       <CardHeader
-        // avatar={
-        //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-        //     WFS
-        //   </Avatar>
-        // }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
