@@ -45,7 +45,7 @@ function App() {
         <Route path="/press" element={<Press />} />
         <Route path="/lyrics" element={<Lyrics />} />
         <Route path="/behindthesong" element={<BehindTheSong />} />
-        <Route path="/merch" element={<Merch />} />
+        <Route path="/merch" element={<Merch products={products} />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/staytuned" element={<StayTuned />} />
         <Route path="*" element={<Error />} />

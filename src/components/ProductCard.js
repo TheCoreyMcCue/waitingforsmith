@@ -24,7 +24,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {

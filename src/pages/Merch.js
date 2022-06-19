@@ -4,12 +4,15 @@ import { Box } from "@mui/material";
 
 import { ProductCard } from "../components";
 
-const Merch = () => {
+const Merch = ({ products }) => {
   return (
     <Box
       style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
     >
-      <ProductCard />
+      {products.map((product) => (
+        <ProductCard product={product} />)
+      )}
+      <ProductCard  />
       <ProductCard />
       <ProductCard />
       <ProductCard />
