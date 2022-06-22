@@ -9,19 +9,9 @@ const Merch = ({ products }) => {
     <Box
       style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
     >
-      {products.map((product) => (
-        <ProductCard product={product} />)
+      {products.map((product, index) => (
+        <ProductCard product={product} key={index} />)
       )}
-      <ProductCard  />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
     </Box>
   );
 };

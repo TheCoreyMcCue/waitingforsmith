@@ -142,7 +142,11 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
           <Button style={{ color: "white" }}>
-            <ShoppingCartIcon />
+            <ShoppingCartIcon
+              onClick={() => {
+                navigate("/shoppingcart");
+              }}
+            />
           </Button>
         </Toolbar>
       </Container>

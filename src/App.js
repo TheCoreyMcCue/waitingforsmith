@@ -8,15 +8,16 @@ import { Navbar } from "./components";
 
 import {
   About,
-  Blog,
   BehindTheSong,
+  Blog,
   Error,
   Home,
   Live,
   Lyrics,
   Merch,
   Press,
-  StayTuned,
+  ShoppingCart,
+  StayTuned
 } from "./pages";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/merch" element={<Merch products={products} />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/staytuned" element={<StayTuned />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>

@@ -8,3 +8,4 @@ export { default as Press } from "./Press";
 export { default as Blog } from "./Blog";
 export { default as Error } from "./Error";
 export { default as StayTuned } from "./StayTuned";
+export { default as ShoppingCart } from "./ShoppingCart";
