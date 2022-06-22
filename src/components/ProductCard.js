@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import {
   FormControl,
   Card,
@@ -10,10 +11,12 @@ import {
   CardContent,
   CardActions,
 } from "@mui/material";
-
-import { AddShoppingCart } from "@mui/icons-material/AddShoppingCart";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+// import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
+  // const navigate = useNavigate();
+
   console.log(
     "🚀 ~ file: ProductCard.js ~ line 28 ~ ProductCard ~ product",
     product
@@ -32,15 +35,20 @@ const ProductCard = ({ product }) => {
       />
       <CardMedia component="img" height="194" image={product.image.url} />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="h6" color="text.secondary">
           {product.description.slice(3, -4)}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <FormControl fullWidth>
+        <AddShoppingCartIcon
+          onClick={() => alert("added to cart")}
+          style={{ position: "relative", left: "230", top: "10" }}
+        />
+        <FormControl>
           <InputLabel variant="standard" htmlFor="uncontrolled-native">
             Size
           </InputLabel>
+
           <NativeSelect defaultValue="Medium" inputProps={{}}>
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
