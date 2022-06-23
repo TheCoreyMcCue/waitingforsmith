@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import {
   AppBar,
+  Badge,
   Box,
   Button,
   Container,
@@ -29,7 +30,7 @@ const pages = [
   "Stay Tuned",
 ];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = ({ totalItems }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const navigate = useNavigate();
@@ -141,13 +142,15 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
-          <Button style={{ color: "white" }}>
-            <ShoppingCartIcon
-              onClick={() => {
-                navigate("/shoppingcart");
-              }}
-            />
-          </Button>
+          <IconButton style={{ color: "white" }}>
+            <Badge badgeContent={totalItems}>
+              <ShoppingCartIcon
+                onClick={() => {
+                  navigate("/shoppingcart");
+                }}
+              />
+            </Badge>
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>

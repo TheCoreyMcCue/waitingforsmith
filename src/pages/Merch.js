@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 
 import { ProductCard } from "../components";
 
-const Merch = ({ products }) => {
+const Merch = ({ products, onAddToCart }) => {
   return (
     <Box
       style={{
@@ -15,7 +15,7 @@ const Merch = ({ products }) => {
       }}
     >
       {products.map((product, index) => (
-        <ProductCard product={product} key={index} />
+        <ProductCard product={product} key={index} onAddToCart={onAddToCart} />
       ))}
     </Box>
   );

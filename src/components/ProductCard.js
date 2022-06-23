@@ -1,26 +1,23 @@
 import * as React from "react";
 
 import {
-  FormControl,
+  Box,
   Card,
-  Typography,
+  CardActions,
+  CardContent,
   CardHeader,
   CardMedia,
+  FormControl,
+  IconButton,
   InputLabel,
   NativeSelect,
-  CardContent,
-  CardActions,
+  Typography,
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 // import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onAddToCart }) => {
   // const navigate = useNavigate();
-
-  console.log(
-    "🚀 ~ file: ProductCard.js ~ line 28 ~ ProductCard ~ product",
-    product
-  );
 
   return (
     <Card sx={{ maxWidth: 270, minWidth: 270, margin: "1%" }}>
@@ -39,24 +36,31 @@ const ProductCard = ({ product }) => {
           {product.description.slice(3, -4)}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <AddShoppingCartIcon
-          onClick={() => alert("added to cart")}
-          style={{ position: "relative", left: "230", top: "10" }}
-        />
-        <FormControl>
-          <InputLabel variant="standard" htmlFor="uncontrolled-native">
-            Size
-          </InputLabel>
+      <Box>
+        <CardActions
+          disableSpacing
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <FormControl>
+            <InputLabel variant="standard" htmlFor="uncontrolled-native">
+              Size
+            </InputLabel>
 
-          <NativeSelect defaultValue="Medium" inputProps={{}}>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-            <option value="Extra Large">Extra Large</option>
-          </NativeSelect>
-        </FormControl>
-      </CardActions>
+            <NativeSelect defaultValue="Medium" inputProps={{}}>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="Extra Large">Extra Large</option>
+            </NativeSelect>
+          </FormControl>
+          <IconButton
+            onClick={() => onAddToCart(product.id, 1)}
+            style={{ color: "gray", minHeight: "3em" }}
+          >
+            <AddShoppingCartIcon style={{ marginBottom: "-10" }} />
+          </IconButton>
+        </CardActions>
+      </Box>
     </Card>
   );
 };

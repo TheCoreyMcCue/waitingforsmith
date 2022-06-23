@@ -17,12 +17,14 @@ import {
   Merch,
   Press,
   ShoppingCart,
-  StayTuned
+  StayTuned,
 } from "./pages";
 
 function App() {
   const theme = useTheme();
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
+
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   const fetchProducts = async () => {
@@ -30,15 +32,25 @@ function App() {
     setProducts(data);
   };
 
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+  };
+
+  const handleAddToCart = async (productId, qty) => {
+    const item = await commerce.cart.add(productId, qty);
+    setCart(item.cart);
+  };
+
   useEffect(() => {
     fetchProducts();
-  }, []);
+    fetchCart();
+  }, [cart, products]);
 
-  console.log("🚀 ~ file: App.js ~ line 34 ~ useEffect ~ products", products);
+  console.log("🚀 ~ file: App.js ~ line 34 ~ useEffect ~ cart", cart);
 
   return (
     <Router>
-      <Navbar isDesktop={isDesktop} />
+      <Navbar isDesktop={isDesktop} totalItems={cart.total_items} />
       <Routes>
         <Route path="/" element={<Home isDesktop={isDesktop} />} />
         <Route path="/about" element={<About />} />
@@ -46,7 +58,10 @@ function App() {
         <Route path="/press" element={<Press />} />
         <Route path="/lyrics" element={<Lyrics />} />
         <Route path="/behindthesong" element={<BehindTheSong />} />
-        <Route path="/merch" element={<Merch products={products} />} />
+        <Route
+          path="/merch"
+          element={<Merch products={products} onAddToCart={handleAddToCart} />}
+        />
         <Route path="/blog" element={<Blog />} />
         <Route path="/staytuned" element={<StayTuned />} />
         <Route path="/shoppingcart" element={<ShoppingCart />} />
