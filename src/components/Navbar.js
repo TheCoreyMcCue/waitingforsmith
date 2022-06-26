@@ -142,12 +142,15 @@ const ResponsiveAppBar = ({ totalItems }) => {
               </Button>
             ))}
           </Box>
-          <IconButton style={{ color: "white" }}>
-            <Badge badgeContent={totalItems}>
+          <IconButton onClick={() => {
+            navigate("/shoppingcart");
+          }} style={{ color: "white" }}>
+            <Badge
+              color="error"
+              badgeContent={totalItems}
+            >
               <ShoppingCartIcon
-                onClick={() => {
-                  navigate("/shoppingcart");
-                }}
+
               />
             </Badge>
           </IconButton>

@@ -32,9 +32,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       />
       <CardMedia component="img" height="194" image={product.image.url} />
       <CardContent>
-        <Typography variant="h6" color="text.secondary">
-          {product.description.slice(3, -4)}
-        </Typography>
+        <Typography dangerouslySetInnerHTML={{__html: product.description}} variant="h6" color="text.secondary" />
       </CardContent>
       <Box>
         <CardActions
