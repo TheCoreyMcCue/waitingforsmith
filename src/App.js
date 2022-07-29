@@ -44,13 +44,11 @@ function App() {
   useEffect(() => {
     fetchProducts();
     fetchCart();
-  }, [cart, products]);
-
-  console.log("🚀 ~ file: App.js ~ line 34 ~ useEffect ~ cart", cart);
+  }, []);
 
   return (
     <Router>
-      <Navbar isDesktop={isDesktop} totalItems={cart.total_items} />
+      <Navbar isDesktop={isDesktop} cart={cart} data-testid="navbar" />
       <Routes>
         <Route path="/" element={<Home isDesktop={isDesktop} />} />
         <Route path="/about" element={<About />} />
@@ -64,7 +62,7 @@ function App() {
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/staytuned" element={<StayTuned />} />
-        <Route path="/shoppingcart" element={<ShoppingCart />} />
+        <Route path="/shoppingcart" totalItems={cart.total_items} element={<ShoppingCart />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>
