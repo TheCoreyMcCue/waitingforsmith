@@ -46,6 +46,7 @@ function App() {
     fetchCart();
   }, []);
 
+
   return (
     <Router>
       <Navbar isDesktop={isDesktop} cart={cart} data-testid="navbar" />

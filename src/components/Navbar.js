@@ -30,7 +30,7 @@ const pages = [
   "Stay Tuned",
 ];
 
-const ResponsiveAppBar = ({ totalItems }) => {
+const ResponsiveAppBar = ({ cart }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const navigate = useNavigate();
@@ -147,7 +147,7 @@ const ResponsiveAppBar = ({ totalItems }) => {
           }} style={{ color: "white" }}>
             <Badge
               color="error"
-              badgeContent={totalItems}
+              badgeContent={cart?.total_items}
             >
               <ShoppingCartIcon
 
