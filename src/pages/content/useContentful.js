@@ -72,7 +72,23 @@ const useContentful = () => {
       console.log(`error fetching pop up data: ${error}`);
     }
   };
-  return { getTourDates, getHomePage, getPopUp, getTour };
+  const getAboutPage = async () => {
+    try {
+      const about = await client.getEntries({
+        content_type: "aboutPage",
+        select: "fields",
+      });
+      const sanitizedAbout = about.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedAbout;
+    } catch (error) {
+      console.log(`error fetching pop up data: ${error}`);
+    }
+  };
+  return { getTourDates, getHomePage, getPopUp, getTour, getAboutPage };
 };
 
 export default useContentful;
