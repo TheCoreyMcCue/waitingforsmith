@@ -27,6 +27,7 @@ const HomeHero = ({ isDesktop, homePageData, popUpData }) => {
           muted={true}
           playing={true}
           style={{ marginLeft: !isDesktop && "-150vw" }}
+          playsinline={true}
         />
       </div>
       <BasicModal isDesktop={isDesktop} popUpData={popUpData} />
