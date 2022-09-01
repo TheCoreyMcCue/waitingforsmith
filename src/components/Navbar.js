@@ -48,8 +48,11 @@ const ResponsiveAppBar = ({ cart }) => {
     setAnchorElNav(null);
   };
 
+  console.log(window)
+  const mobile = window.outerWidth < 500
+
   return (
-    <AppBar position="static" sx={{ background: "grey" }}>
+    <AppBar position={mobile ? "fixed" : "static"} sx={{ background: "grey", zIndex: "100" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

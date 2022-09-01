@@ -6,23 +6,24 @@ import { Container, Box, Typography } from "@mui/material";
 const About = () => {
   const [aboutData, setaboutData] = useState([]);
   const { getAboutPage } = useContentful();
-  console.log("data", aboutData[0]?.aboutImage?.fields.file?.url)
+  
+  const mobile = window.outerWidth < 400
 
   useEffect(() => {
     getAboutPage().then((data) => setaboutData(data));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [getAboutPage]);
 
   return (
-    <Container style={{ padding: "none" }}>
+    <Container disableGutters={true} style={{ maxWidth: '100vw' }}>
       <Box>
-        {/* <img style={{ height: "100vh", width: "100vw", overflow: "hidden" }} alt="" src={aboutData[0]?.aboutImage?.fields.file?.url} /> */}
+        <img style={{ height: "100vh", width: "100vw", overflow: "hidden", position: "fixed", opacity: "60%" }} alt="" src={aboutData[0]?.aboutImage?.fields.file?.url} />
         <Typography className="text-3xl font-bold" style={{
-          marginTop: "8%", fontSize: "2.5rem", color: "white", opacity: "65%", backgroundPositionX: "40%", backgroundPositionY: "20%", backgroundImage: `url(${aboutData[0]?.aboutImage?.fields.file?.url})`
+          fontSize: "2.5rem", color: "#5e5858", position: "absolute", width: "80vw", height: "80vh", padding: "5%", left: "10%", marginTop: mobile ? "15%" : "1%"
         }
         }> {aboutData[0]?.aboutMain}</Typography>
       </Box>
     </Container >
+
   );
 };
 
