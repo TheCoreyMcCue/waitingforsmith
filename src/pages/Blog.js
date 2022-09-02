@@ -11,6 +11,7 @@ const Blog = () => {
   useEffect(() => {
     getBlogPage().then((data) => setBlogPage(data));
     getBlogPosts().then((data) => setBlogPosts(data));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const backgroundPicture = blogPage[0]?.background?.fields?.file?.url
 
