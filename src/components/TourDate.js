@@ -16,7 +16,7 @@ const TourDate = ({ dateInfo }) => {
         paddingBottom: "1%",
       }}
     >
-      <Card style={{ minWidth: "65%" }}>
+      <Card style={{ minWidth: "65%", opacity: "70%" }}>
         <CardContent>
           <Typography variant="h5" color="text.primary" gutterBottom>
             {dateInfo?.title}
