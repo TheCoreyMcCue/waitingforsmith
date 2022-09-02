@@ -22,11 +22,6 @@ const ProductCard = ({ product, onAddToCart }) => {
   return (
     <Card sx={{ maxWidth: 270, minWidth: 270, margin: "1%" }}>
       <CardHeader
-        // action={
-        //   <IconButton aria-label="settings">
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
         title={product.name}
         subheader={product.price.formatted_with_symbol}
       />

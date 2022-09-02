@@ -64,7 +64,7 @@ function App() {
           />
           <Route path="/blog" element={<Blog />} />
           <Route path="/staytuned" element={<StayTuned />} />
-          <Route path="/shoppingcart" totalItems={cart.total_items} element={<ShoppingCart />} />
+          <Route path="/shoppingcart" element={<ShoppingCart cart={cart} />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

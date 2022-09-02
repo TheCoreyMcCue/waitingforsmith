@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+
+import { Container, Typography, Button } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 
 const EmptyCart = () => {
+  const navigate = useNavigate();
   return (
-    <div>
-      
-    </div>
+    <Container>
+      <Typography>Your Cart is empty</Typography>
+      <Button onClick={() => navigate("/merch")}>back to the shop</Button>
+    </Container>
   )
 }
 
-export default EmptyCart
+export default EmptyCart;

@@ -11,12 +11,12 @@ const Blog = () => {
   useEffect(() => {
     getBlogPage().then((data) => setBlogPage(data));
     getBlogPosts().then((data) => setBlogPosts(data));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const backgroundPicture = blogPage[0]?.background?.fields?.file?.url
 
   return <div>
-    <img alt="" src={backgroundPicture} style={{ height: "100vh", width: "100vw", objectFit: "cover", overflow: "hidden", position: "fixed", opacity: "60%" }} />
+    <img alt="" src={backgroundPicture} style={{ height: "100vh", width: "100vw", objectFit: "cover", overflow: "hidden", position: "fixed", opacity: "50%" }} />
     <BlogPost blogPosts={blogPosts} />
   </div>;
 };
