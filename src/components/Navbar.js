@@ -52,7 +52,7 @@ const ResponsiveAppBar = ({ cart }) => {
   const mobile = window.outerWidth < 500
 
   return (
-    <AppBar position={mobile ? "fixed" : "static"} sx={{ background: "grey" }}>
+    <AppBar position={mobile ? "fixed" : "sticky"} sx={{ background: "grey" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

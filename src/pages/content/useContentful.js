@@ -120,7 +120,23 @@ const useContentful = () => {
       console.log(`error fetching pop up data: ${error}`);
     }
   };
-  return { getTourDates, getHomePage, getPopUp, getTour, getAboutPage, getBlogPage, getBlogPosts };
+  const getMerchPage = async () => {
+    try {
+      const merchPage = await client.getEntries({
+        content_type: "merchPage",
+        select: "fields",
+      });
+      const sanitizedMerchPage = merchPage.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedMerchPage;
+    } catch (error) {
+      console.log(`error fetching pop up data: ${error}`);
+    }
+  };
+  return { getTourDates, getHomePage, getPopUp, getTour, getAboutPage, getBlogPage, getBlogPosts, getMerchPage };
 };
 
 export default useContentful;
