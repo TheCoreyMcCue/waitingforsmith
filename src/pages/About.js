@@ -7,8 +7,6 @@ const About = () => {
   const [aboutData, setaboutData] = useState([]);
   const { getAboutPage } = useContentful();
 
-  const mobile = window.outerWidth < 400
-
   useEffect(() => {
     getAboutPage().then((data) => setaboutData(data));
   }, [getAboutPage]);
