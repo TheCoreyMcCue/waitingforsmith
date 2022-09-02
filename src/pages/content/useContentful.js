@@ -88,7 +88,39 @@ const useContentful = () => {
       console.log(`error fetching pop up data: ${error}`);
     }
   };
-  return { getTourDates, getHomePage, getPopUp, getTour, getAboutPage };
+  const getBlogPage = async () => {
+    try {
+      const blogPage = await client.getEntries({
+        content_type: "blogPage",
+        select: "fields",
+      });
+      const sanitizedBlogPage = blogPage.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedBlogPage;
+    } catch (error) {
+      console.log(`error fetching pop up data: ${error}`);
+    }
+  };
+  const getBlogPosts = async () => {
+    try {
+      const blogPost = await client.getEntries({
+        content_type: "blogPost",
+        select: "fields",
+      });
+      const sanitizedBlogPost = blogPost.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedBlogPost;
+    } catch (error) {
+      console.log(`error fetching pop up data: ${error}`);
+    }
+  };
+  return { getTourDates, getHomePage, getPopUp, getTour, getAboutPage, getBlogPage, getBlogPosts };
 };
 
 export default useContentful;
