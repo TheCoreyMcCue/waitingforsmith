@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import ReactPlayer from "react-player";
 
 import BasicModal from "./Modal";
 
 const HomeHero = ({ isDesktop, homePageData, popUpData }) => {
-  const player = useRef(null);
+  // const player = useRef(null);
 
   // useEffect(() => {
   //   if (player.current) {
@@ -17,21 +17,27 @@ const HomeHero = ({ isDesktop, homePageData, popUpData }) => {
   // }, [player.current]);
 
   return (
-    <div style={{ height: "100vh", width: "100vw", overflow: "hidden" }}>
-      <div ref={player}>
-        <ReactPlayer
-          height="auto"
-          width="auto"
-          loop={true}
-          url={homePageData[0]?.topVideo?.fields?.file?.url}
-          muted={true}
-          playing={true}
-          style={{ marginLeft: !isDesktop && "-150vw" }}
-          playsinline={true}
-        />
-      </div>
+    <>
+      <ReactPlayer
+        height="auto"
+        width="auto"
+        loop={true}
+        url={homePageData[0]?.topVideo?.fields?.file?.url}
+        muted={true}
+        playing={true}
+        playsinline={true}
+        config={{
+          file: {
+            attributes: {
+              style: {
+                height: isDesktop ? "100vh" : "calc(100vh - 60px)", objectFit: "cover", width: "100vw"
+              }
+            }
+          }
+        }}
+      />
       <BasicModal isDesktop={isDesktop} popUpData={popUpData} />
-    </div>
+    </>
   );
 };
 

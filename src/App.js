@@ -50,22 +50,24 @@ function App() {
   return (
     <Router>
       <Navbar isDesktop={isDesktop} cart={cart} data-testid="navbar" />
-      <Routes>
-        <Route path="/" element={<Home isDesktop={isDesktop} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/live" element={<Live />} />
-        <Route path="/press" element={<Press />} />
-        <Route path="/lyrics" element={<Lyrics />} />
-        <Route path="/behindthesong" element={<BehindTheSong />} />
-        <Route
-          path="/merch"
-          element={<Merch products={products} onAddToCart={handleAddToCart} />}
-        />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/staytuned" element={<StayTuned />} />
-        <Route path="/shoppingcart" totalItems={cart.total_items} element={<ShoppingCart />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <div style={{ paddingTop: !isDesktop ? 60 : 0 }}>
+        <Routes>
+          <Route path="/" element={<Home isDesktop={isDesktop} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/live" element={<Live />} />
+          <Route path="/press" element={<Press />} />
+          <Route path="/lyrics" element={<Lyrics />} />
+          <Route path="/behindthesong" element={<BehindTheSong />} />
+          <Route
+            path="/merch"
+            element={<Merch products={products} onAddToCart={handleAddToCart} />}
+          />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/staytuned" element={<StayTuned />} />
+          <Route path="/shoppingcart" totalItems={cart.total_items} element={<ShoppingCart />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

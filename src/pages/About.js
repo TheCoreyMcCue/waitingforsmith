@@ -16,9 +16,9 @@ const About = () => {
   return (
     <Container disableGutters={true} style={{ maxWidth: '100vw' }}>
       <Box>
-        <img style={{ height: "100vh", width: "100vw", overflow: "hidden", position: "fixed", opacity: "60%" }} alt="" src={aboutData[0]?.background?.fields.file?.url} />
+        <img style={{ height: "100vh", width: "100vw", objectFit: "cover", overflow: "hidden", position: "fixed", opacity: "60%" }} alt="" src={aboutData[0]?.background?.fields.file?.url} />
         <Typography className="text-3xl font-bold" style={{
-          fontSize: "2.5rem", color: "#5e5858", position: "absolute", width: "80vw", height: "80vh", padding: "5%", left: "10%", marginTop: mobile ? "15%" : "1%"
+          fontSize: "2.5rem", color: "#5e5858", position: "absolute", width: "80vw", height: "80vh", padding: "5%", left: "10%"
         }
         }> {aboutData[0]?.aboutMain}</Typography>
       </Box>
