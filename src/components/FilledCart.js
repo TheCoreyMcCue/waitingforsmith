@@ -1,11 +1,16 @@
 import React from 'react';
 
-import { Container, Grid, Typography } from '@mui/material';
+import { Button, Container, Grid, Typography } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 import { CartItem } from './'
 
+
 const FilledCart = ({ cart }) => {
+  const navigate = useNavigate();
   return (
     <Container>
+      <Typography variant='h2'>Your Cart:</Typography>
+      <Button onClick={() => navigate("/merch")}>Back to shop</Button>
       <Grid>
         {cart?.line_items?.map((item, index) =>
           <CartItem key={index} item={item} cart={cart} />
