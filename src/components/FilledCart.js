@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CartItem } from './'
 
 
-const FilledCart = ({ cart }) => {
+const FilledCart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
   const navigate = useNavigate();
   return (
     <Container>
@@ -13,9 +13,10 @@ const FilledCart = ({ cart }) => {
       <Button onClick={() => navigate("/merch")}>Back to shop</Button>
       <Grid>
         {cart?.line_items?.map((item, index) =>
-          <CartItem key={index} item={item} cart={cart} />
+          <CartItem key={index} item={item} cart={cart} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} />
         )}
         <Typography>Subtotal: {cart?.subtotal?.formatted_with_symbol}</Typography>
+        <Button onClick={() => handleEmptyCart()}>Empty Cart</Button>
       </Grid>
     </Container>
   )

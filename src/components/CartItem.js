@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const CartItem = ({ item, cart }) => {
-  // console.log("🚀 ~ file: CartItem.js ~ line 5 ~ CartItem ~ item", item)
+const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, cart }) => {
+  console.log("🚀 ~ file: CartItem.js ~ line 5 ~ CartItem ~ item", cart)
   return (
     <Card>
       <CardContent >
@@ -17,12 +17,18 @@ const CartItem = ({ item, cart }) => {
 
           <Typography variant="h6" color="text.primary">{item?.name}</Typography>
           <Typography variant="p" color="text.secindary">{item?.price?.formatted_with_symbol}</Typography>
-
+          <CardActions>
+            <div style={{ display: "flex" }}>
+              <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}>-</Button>
+              <Typography>{item.quantity}</Typography>
+              <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</Button>
+            </div>
+          </CardActions>
           <div>
-            <Button color="error" variant="outlined"><DeleteIcon /></Button>
+            <Button color="error" variant="outlined" onClick={() => handleRemoveFromCart(item.id)}><DeleteIcon /></Button>
           </div>
         </div>
-      </CardContent>
+      </CardContent >
     </Card >
   )
 }
