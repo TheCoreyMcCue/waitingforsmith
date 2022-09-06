@@ -31,9 +31,9 @@ const Live = () => {
         filter: `sepia(25%)`,
       }}
     >
-      {tourDates.map((date) => (
+      {tourDates.map((date, index) => (
         <div>
-          <TourDate dateInfo={date} />
+          <TourDate key={index} dateInfo={date} />
         </div>
       ))}
     </Box>

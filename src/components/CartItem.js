@@ -1,8 +1,20 @@
 import React from 'react';
+
 import { Box, Button, Card, CardActions, CardContent, CardMedia, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, isDesktop }) => {
+const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, isDesktop, setLoading, loading }) => {
+
+  const updateCart = async (id, event) => {
+    setLoading(true)
+    await handleUpdateCartQty(id, event)
+    setLoading(false)
+  }
+  const deleteItem = async (id) => {
+    setLoading(true)
+    await handleRemoveFromCart(id)
+    setLoading(false)
+  }
   return (
     <Card style={{ marginBottom: "2%" }}>
       <CardContent >
@@ -32,7 +44,7 @@ const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, isDesktop }
                   id="demo-simple-select"
                   value={item.quantity}
                   label="Quantity"
-                  onChange={(event) => handleUpdateCartQty(item.id, event.target.value)}
+                  onChange={(event) => updateCart(item.id, event.target.value)}
                 >
                   <MenuItem value={1}>1</MenuItem>
                   <MenuItem value={2}>2</MenuItem>
@@ -43,7 +55,7 @@ const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, isDesktop }
               </FormControl>
             </Box>
             <div>
-              <Button color="error" variant="outlined" onClick={() => handleRemoveFromCart(item.id)}><DeleteIcon /></Button>
+              <Button color="error" variant="outlined" onClick={() => deleteItem(item.id)}><DeleteIcon /></Button>
             </div>
           </CardActions>
         </div>
