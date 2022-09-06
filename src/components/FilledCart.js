@@ -22,7 +22,7 @@ const FilledCart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmp
   }
 
   return (
-    loading || !Boolean(cart.line_items) ? <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}><CircularProgress /></div> :
+    loading || !Boolean(cart.line_items) ? <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}><CircularProgress style={{ marginTop: "10%" }} /></div> :
       <Container>
         <Typography variant='h2'>Your Cart:</Typography>
         <Button onClick={() => navigate("/merch")}>Back to shop</Button>
