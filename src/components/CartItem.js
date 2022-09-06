@@ -3,9 +3,8 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, cart }) => {
-  console.log("🚀 ~ file: CartItem.js ~ line 5 ~ CartItem ~ item", cart)
   return (
-    <Card>
+    <Card style={{ marginBottom: "2%" }}>
       <CardContent >
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <CardMedia

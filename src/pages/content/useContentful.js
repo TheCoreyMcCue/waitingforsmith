@@ -136,7 +136,33 @@ const useContentful = () => {
       console.log(`error fetching pop up data: ${error}`);
     }
   };
-  return { getTourDates, getHomePage, getPopUp, getTour, getAboutPage, getBlogPage, getBlogPosts, getMerchPage };
+  const getCartPage = async () => {
+    try {
+      const cartPage = await client.getEntries({
+        content_type: "cartPage",
+        select: "fields",
+      });
+      const sanitizedCartPage = cartPage.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedCartPage;
+    } catch (error) {
+      console.log(`error fetching pop up data: ${error}`);
+    }
+  };
+  return {
+    getAboutPage,
+    getBlogPage,
+    getBlogPosts,
+    getCartPage,
+    getHomePage,
+    getMerchPage,
+    getPopUp,
+    getTour,
+    getTourDates
+  };
 };
 
 export default useContentful;
