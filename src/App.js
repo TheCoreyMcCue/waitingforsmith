@@ -80,7 +80,7 @@ function App() {
           />
           <Route path="/blog" element={<Blog />} />
           <Route path="/staytuned" element={<StayTuned />} />
-          <Route path="/shoppingcart" element={<ShoppingCart cart={cart} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} handleEmptyCart={handleEmptyCart} />} />
+          <Route path="/shoppingcart" element={<ShoppingCart isDesktop={isDesktop} cart={cart} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} handleEmptyCart={handleEmptyCart} />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

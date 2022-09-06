@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 import { EmptyCart, FilledCart } from "../components";
 import useContentful from "./content/useContentful";
 
-const ShoppingCart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
+const ShoppingCart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart, isDesktop }) => {
   const [background, setBackground] = useState([]);
   const { getCartPage } = useContentful();
 
@@ -17,7 +17,7 @@ const ShoppingCart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleE
   return (
     <Container>
       <img src={backgroundImg} alt={background[0]?.background?.fields?.title} style={{ height: "100vh", zIndex: "-1", left: 0, width: "100vw", objectFit: "cover", overflow: "hidden", position: "fixed", opacity: "60%" }} />
-      {cart?.total_items < 1 ? <EmptyCart /> : <FilledCart handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} handleEmptyCart={handleEmptyCart} cart={cart} />}
+      {cart?.total_items < 1 ? <EmptyCart /> : <FilledCart isDesktop={isDesktop} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} handleEmptyCart={handleEmptyCart} cart={cart} />}
     </Container>
   )
 };
