@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import useContentful from "./content/useContentful";
 
-import { HomeHero, HomePromo, Socials } from "../components";
+import { HomeHero, HomePromo, Promotion, Socials } from "../components";
+import { AppBar } from "@mui/material";
 
 const Home = ({ isDesktop }) => {
   const [homePageData, setHomePageData] = useState([]);
@@ -22,8 +23,17 @@ const Home = ({ isDesktop }) => {
         homePageData={homePageData}
         popUpData={popUpData}
       />
-      <Socials />
+      <AppBar style={{
+        height: "1px",
+        backgroundColor: 'transparent', top: "200px",
+        boxShadow: 'none', color: "black", position: "sticky",
+      }}>
+
+        <Socials />
+      </AppBar>
+      <Promotion />
       <HomePromo />
+      {/* "Instagram ^^^" */}
     </div>
   );
 };

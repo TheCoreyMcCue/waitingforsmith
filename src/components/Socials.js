@@ -6,7 +6,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 const Socials = () => {
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", position: "sticky" }}
+      style={{ display: "flex", width: "100vw", flexDirection: "column", color: "white", justifyContent: "flex-end", }}
     >
       <InstagramIcon />
       <YouTubeIcon />
