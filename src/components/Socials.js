@@ -8,9 +8,9 @@ const Socials = () => {
     <div
       style={{ display: "flex", width: "100vw", flexDirection: "column", color: "white", justifyContent: "flex-end", }}
     >
-      <InstagramIcon />
-      <YouTubeIcon />
-      <FacebookIcon />
+      <InstagramIcon sx={{ fontSize: 35 }} />
+      <YouTubeIcon sx={{ fontSize: 35 }} />
+      <FacebookIcon sx={{ fontSize: 35 }} />
     </div>
   );
 };
