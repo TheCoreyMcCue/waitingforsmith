@@ -33,7 +33,7 @@ const FilledCart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmp
           <Typography>Subtotal: {cart?.subtotal?.formatted_with_symbol}</Typography>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "15%" }}>
             <Button onClick={() => emptyCart()}>Empty Cart</Button>
-            <Button onClick={() => window.location.reload(false)}>Continue to Checkout</Button>
+            <Button onClick={() => navigate("/checkout")} >Continue to Checkout</Button>
           </div>
         </Grid>
       </Container>

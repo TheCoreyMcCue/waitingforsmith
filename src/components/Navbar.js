@@ -56,6 +56,7 @@ const ResponsiveAppBar = ({ cart }) => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
+            style={{ fontFamily: "Grotesque" }}
             variant="h5"
             noWrap
             component="div"

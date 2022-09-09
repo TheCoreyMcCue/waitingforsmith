@@ -22,12 +22,13 @@ const ProductCard = ({ product, onAddToCart }) => {
   return (
     <Card sx={{ maxWidth: 270, minWidth: 270, margin: "1%" }}>
       <CardHeader
+        style={{ fontFamily: "Grotesque" }}
         title={product.name}
         subheader={product.price.formatted_with_symbol}
       />
       <CardMedia component="img" height="194" image={product.image.url} />
       <CardContent>
-        <Typography dangerouslySetInnerHTML={{__html: product.description}} variant="h6" color="text.secondary" />
+        <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="h6" color="text.secondary" />
       </CardContent>
       <Box>
         <CardActions

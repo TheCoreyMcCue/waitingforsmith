@@ -18,13 +18,13 @@ const TourDate = ({ dateInfo }) => {
     >
       <Card style={{ minWidth: "65%", opacity: "70%" }}>
         <CardContent>
-          <Typography variant="h5" color="text.primary" gutterBottom>
+          <Typography style={{ fontFamily: "Grotesque" }} variant="h5" color="text.primary" gutterBottom>
             {dateInfo?.title}
           </Typography>
-          <Typography variant="h6" color="text.primary" gutterBottom>
+          <Typography style={{ fontFamily: "Grotesque" }} variant="h6" color="text.primary" gutterBottom>
             {dateInfo?.place}
           </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          <Typography style={{ fontFamily: "Grotesque" }} sx={{ mb: 1.5 }} color="text.secondary">
             {new Date(dateInfo?.tourDate).toLocaleDateString("en-gb", {
               weekday: "long",
               year: "numeric",
@@ -35,6 +35,7 @@ const TourDate = ({ dateInfo }) => {
         </CardContent>
         <CardActions>
           <Button
+            style={{ fontFamily: "Grotesque" }}
             onClick={() =>
               window.open(dateInfo?.ticketLink, "_blank", "noopener")
             }
