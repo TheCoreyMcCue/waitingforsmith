@@ -24,12 +24,12 @@ const HomePromo = () => {
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {response.blocks.map((block, index) => (
-          <Grid item xs={12} sm={12} md={6} key={index} style={{ overflow: "hidden" }}>
+          <Grid item xs={12} sm={12} md={6} key={index}>
             <Item>
               <img
                 alt=""
                 src={block.image}
-                style={{ height: "100%", maxWidth: "100%", overflow: "hidden" }}
+                style={{ height: "100%", maxWidth: "100%", objectFit: "cover" }}
               />
             </Item>
           </Grid>
