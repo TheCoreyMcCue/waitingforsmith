@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import { TourDate } from "../components";
 
 import useContentful from "./content/useContentful";
+import { Typography } from "@mui/material";
 
 const Live = () => {
   const [tourDates, setTourDates] = useState([]);
@@ -31,6 +32,8 @@ const Live = () => {
         filter: `sepia(25%)`,
       }}
     >
+      <Typography style={{ textAlign: "center" }} color="white" variant="h2">Live</Typography>
+
       {tourDates.map((date, index) => (
         <div>
           <TourDate key={index} dateInfo={date} />

@@ -6,6 +6,7 @@ import {
   Badge,
   Box,
   Button,
+  CircularProgress,
   Container,
   IconButton,
   Menu,
@@ -30,7 +31,7 @@ const pages = [
   "Stay Tuned",
 ];
 
-const ResponsiveAppBar = ({ cart }) => {
+const ResponsiveAppBar = ({ cart, iconLoading }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const navigate = useNavigate();
@@ -146,18 +147,20 @@ const ResponsiveAppBar = ({ cart }) => {
               </Button>
             ))}
           </Box>
-          <IconButton onClick={() => {
-            navigate("/shoppingcart");
-          }} style={{ color: "white" }}>
-            <Badge
-              color="error"
-              badgeContent={cart?.total_items}
-            >
-              <ShoppingCartIcon
+          {iconLoading ? <CircularProgress color="success" /> :
+            <IconButton onClick={() => {
+              navigate("/shoppingcart");
+            }} style={{ color: "white" }}>
+              <Badge
+                color="error"
+                badgeContent={cart?.total_items}
+              >
+                <ShoppingCartIcon
 
-              />
-            </Badge>
-          </IconButton>
+                />
+              </Badge>
+            </IconButton>
+          }
         </Toolbar>
       </Container>
     </AppBar>

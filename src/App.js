@@ -23,6 +23,7 @@ import {
 function App() {
   const theme = useTheme();
   const [products, setProducts] = useState([]);
+  const [iconLoading, setIconLoading] = useState(false);
   const [cart, setCart] = useState({});
 
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
@@ -37,8 +38,10 @@ function App() {
   };
 
   const handleAddToCart = async (productId, qty) => {
+    setIconLoading(true);
     const { cart } = await commerce.cart.add(productId, qty);
     setCart(cart);
+    setIconLoading(false);
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
@@ -65,7 +68,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar isDesktop={isDesktop} cart={cart} data-testid="navbar" />
+      <Navbar isDesktop={isDesktop} cart={cart} iconLoading={iconLoading} data-testid="navbar" />
       <div style={{ paddingTop: !isDesktop ? 60 : 0 }}>
         <Routes>
           <Route path="/" element={<Home isDesktop={isDesktop} />} />

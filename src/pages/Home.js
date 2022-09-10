@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 
 import useContentful from "./content/useContentful";
 
-import { HomeHero, HomePromo, Promotion, Socials } from "../components";
+import { HomeHero, HomePromo, MailingList, Promotion, Socials } from "../components";
+import Live from './Live';
 import { AppBar } from "@mui/material";
 
 const Home = ({ isDesktop }) => {
   const [homePageData, setHomePageData] = useState([]);
   const [popUpData, setPopUpData] = useState([]);
   const { getHomePage, getPopUp } = useContentful();
+  const instaBackground = homePageData[0]?.instaBackground?.fields?.file?.url
+  const promoBackground = homePageData[0]?.promoBackground?.fields?.file?.url
 
   useEffect(() => {
     getHomePage().then((data) => setHomePageData(data));
@@ -31,9 +34,11 @@ const Home = ({ isDesktop }) => {
 
         <Socials />
       </AppBar>
-      <Promotion />
-      <HomePromo />
+      <Promotion promoBackground={promoBackground} />
+      <HomePromo instaBackground={instaBackground} />
       {/* "Instagram ^^^" */}
+      <Live />
+      <MailingList />
     </div>
   );
 };

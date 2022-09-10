@@ -3,9 +3,21 @@ import React from 'react'
 
 
 
-const Promotion = () => {
+const Promotion = ({ promoBackground }) => {
   return (
-    <Box style={{ height: "100vh", background: "grey", textAlign: "center", paddingTop: "45vh"}}><Typography>Promotion Placeholder</Typography></Box>
+    <Box
+      style={{
+        backgroundImage: `url(${promoBackground})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        marginBottom: "-5%",
+        paddingBottom: "5%",
+        filter: `sepia(25%)`
+      }} sx={{ flexGrow: 1, minHeight: "90vh" }}>
+      <Typography style={{ textAlign: "center" }} color="white" variant="h2"> Promotion</Typography>
+    </Box>
   )
 }
 

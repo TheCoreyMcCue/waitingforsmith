@@ -8,7 +8,6 @@ import { CartItem } from './'
 const FilledCart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart, isDesktop }) => {
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate();
-  console.log(!Boolean(cart.line_items))
 
   useEffect(() => {
     setLoading(false)

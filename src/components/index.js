@@ -10,3 +10,4 @@ export { default as ProductCard } from "./ProductCard";
 export { default as Socials } from "./Socials";
 export { default as TourDate } from "./TourDate";
 export { default as Promotion } from "./Promotion";
+export { default as MailingList } from "./MailingList";

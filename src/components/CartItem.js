@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Button, Card, CardActions, CardContent, CardMedia, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, isDesktop, setLoading, loading }) => {
+const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, isDesktop, setLoading }) => {
 
   const updateCart = async (id, event) => {
     setLoading(true)
@@ -31,11 +31,6 @@ const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty, isDesktop, 
             <Typography style={{ textAlign: "center", margin: "auto" }} variant="p" color="text.secindary">{item?.price?.formatted_with_symbol}</Typography>
           }
           <CardActions>
-            {/* <div style={{ display: "flex", flexDirection: isDesktop ? "row" : "column" }}>
-              <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</Button>
-              <Typography style={{ textAlign: "center" }}>{item.quantity}</Typography>
-              <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}>-</Button>
-            </div> */}
             <Box >
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Quantity</InputLabel>
