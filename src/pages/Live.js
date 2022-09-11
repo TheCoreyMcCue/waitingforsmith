@@ -36,7 +36,7 @@ const Live = () => {
 
       {tourDates.map((date, index) => (
         <div>
-          <TourDate key={index} dateInfo={date} />
+          <TourDate key={`live-date-${index}`} dateInfo={date} />
         </div>
       ))}
     </Box>
