@@ -53,7 +53,9 @@ const ResponsiveAppBar = ({ cart, iconLoading }) => {
   const mobile = window.outerWidth < 500
 
   return (
-    <AppBar position={mobile ? "fixed" : "sticky"} sx={{ background: "grey" }}>
+    <AppBar position={mobile ? "fixed" : "sticky"} style={{
+      backgroundImage: "linear-gradient(to right, #4880EC, #019CAD)"
+    }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

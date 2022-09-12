@@ -29,7 +29,6 @@ const Live = () => {
         paddingBottom: "5%",
         width: "100vw",
         height: "100%",
-        filter: `sepia(25%)`,
       }}
     >
       <Typography style={{ textAlign: "center" }} color="white" variant="h2">Live</Typography>

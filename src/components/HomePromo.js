@@ -35,14 +35,15 @@ const HomePromo = ({ instaBackground }) => {
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {response.blocks.map((block, index) => (
-          <Grid style={{ backgroundColor: { instaBackground } }} item xs={12} sm={12} md={6} key={index}>
+          <Grid style={{ backgroundColor: { instaBackground } }} item xs={12} sm={12} md={6} lg={3} key={index}>
             <Item style={{
               backgroundImage: `url(${instaBackground})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundAttachment: "fixed",
-              filter: `sepia(25%)`
+              display: "flex",
+              justifyContent: "center"
             }}>
               <img
                 alt=""

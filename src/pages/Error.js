@@ -25,7 +25,6 @@ const Error = () => {
       backgroundAttachment: "fixed",
       width: "100vw",
       height: "100vh",
-      filter: `sepia(25%)`
     }}
   >
     <Typography variant="h3" style={{

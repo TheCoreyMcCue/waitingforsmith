@@ -14,7 +14,6 @@ const Promotion = ({ promoBackground }) => {
         backgroundAttachment: "fixed",
         marginBottom: "-5%",
         paddingBottom: "5%",
-        filter: `sepia(25%)`
       }} sx={{ flexGrow: 1, minHeight: "90vh" }}>
       <Typography style={{ textAlign: "center" }} color="white" variant="h2"> Promotion</Typography>
     </Box>
