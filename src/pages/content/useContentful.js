@@ -152,11 +152,28 @@ const useContentful = () => {
       console.log(`error fetching pop up data: ${error}`);
     }
   };
+  const getErrorPage = async () => {
+    try {
+      const errorPage = await client.getEntries({
+        content_type: "errorPage",
+        select: "fields",
+      });
+      const sanitizedErrorPage = errorPage.items.map((item) => {
+        return {
+          ...item.fields,
+        };
+      });
+      return sanitizedErrorPage;
+    } catch (error) {
+      console.log(`error fetching pop up data: ${error}`);
+    }
+  };
   return {
     getAboutPage,
     getBlogPage,
     getBlogPosts,
     getCartPage,
+    getErrorPage,
     getHomePage,
     getMerchPage,
     getPopUp,
