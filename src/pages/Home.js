@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import useContentful from "./content/useContentful";
 
-import { HomeHero, HomePromo, MailingList, Promotion, Socials } from "../components";
+import { EmailForm, HomeHero, HomePromo, Promotion, Socials } from "../components";
 import Live from './Live';
 import { AppBar } from "@mui/material";
 
@@ -38,7 +38,7 @@ const Home = ({ isDesktop }) => {
       <HomePromo instaBackground={instaBackground} />
       {/* "Instagram ^^^" */}
       <Live />
-      <MailingList />
+      <EmailForm />
     </div>
   );
 };

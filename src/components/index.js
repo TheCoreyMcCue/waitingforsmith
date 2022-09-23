@@ -1,6 +1,7 @@
 export { default as BasicModal } from "./Modal";
 export { default as BlogPost } from "./BlogPost";
 export { default as CartItem } from "./CartItem";
+export { default as EmailForm } from "./EmailForm";
 export { default as EmptyCart } from "./EmptyCart";
 export { default as FilledCart } from "./FilledCart";
 export { default as HomeHero } from "./HomeHero";

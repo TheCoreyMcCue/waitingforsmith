@@ -15,10 +15,10 @@ const Blog = () => {
   }, []);
   const backgroundPicture = blogPage[0]?.background?.fields?.file?.url
 
-  return <div>
-    <img alt="" src={backgroundPicture} style={{ height: "100vh", width: "100vw", objectFit: "cover", overflow: "hidden", position: "fixed", opacity: "50%" }} />
-    <BlogPost blogPosts={blogPosts} />
+  return <div style={{ backgroundImage: `url(${blogPage[0]?.background?.fields?.file?.url})`, height: "100%" }}>
+    <img alt="" src={backgroundPicture} style={{ height: "100vh", width: "100vw", objectFit: "cover", overflow: "hidden", position: "fixed", opacity: "50%", zIndex: "-1" }} />
+    <BlogPost blogPosts={blogPosts} blogPage={blogPage} style={{ zIndex: "1000" }} />
   </div>;
 };
 
-export default Blog;
+export { Blog };
